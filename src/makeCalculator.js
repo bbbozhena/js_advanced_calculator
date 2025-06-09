@@ -8,21 +8,31 @@ function makeCalculator() {
     result: 0,
 
     add: function (num) {
-      return this.result + num;
+      this.result += num;
+
+      return this.result;
     },
+
     subtract: function (num) {
-      return this.result - num;
+      this.result -= num;
+
+      return this.result;
     },
 
     multiply: function (num) {
-      return this.result * num;
+      this.result *= num;
+
+      return this.result;
     },
 
     divide: function (num) {
-      return this.result / num;
+      this.result /= num;
+
+      return this.result;
     },
+
     operate: function (callback, num) {
-      this.result = callback.call(this, num);
+      callback.call(this, num);
 
       return this;
     },
